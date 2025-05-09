@@ -1,10 +1,48 @@
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/Images/logo.png'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getUser } from '../services/authService'
 
 const Navbar = () => {
 
   const navigate = useNavigate()
+  const [existAdmin, setExistAdmin] = useState(false)
+
+  const checkAdmin = async () => {
+
+    const { result } = await getUser()
+    result.map(i => {
+
+      if (i.name == 'admin') {
+
+        setExistAdmin(true)
+
+      }
+
+    })
+
+  }
+
+  useEffect(() => {
+
+    checkAdmin()
+
+  }, [])
+
+  const navigateTo = () => {
+
+    if (existAdmin) {
+
+      navigate('/login')
+
+    }
+    else {
+
+      navigate('createAdmin')
+
+    }
+
+  }
 
   return (
 
@@ -17,7 +55,7 @@ const Navbar = () => {
 
       </div>
 
-      <button className='font-bold hover:bg-emerald-800 cursor-pointer bg-emerald-900 py-1 px-4 rounded-lg shadow-xl/20' onClick={() => navigate('/login')}>login</button>
+      <button className='font-bold hover:bg-emerald-800 cursor-pointer bg-emerald-900 py-1 px-4 rounded-lg shadow-xl/20' onClick={() => navigateTo()}>login</button>
 
     </div>
 

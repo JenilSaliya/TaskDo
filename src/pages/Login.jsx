@@ -1,10 +1,9 @@
-import { loginCheck } from '../services/authService'
+import { getUser, loginCheck } from '../services/authService'
 import React, { useEffect, useState } from 'react'
 import hidden from '../assets/Images/hidden.png'
 import { useNavigate } from 'react-router-dom'
 import eye from '../assets/Images/eye.png'
 import { useForm } from 'react-hook-form'
-import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
 import { toastError, toastSuccess } from '../services/toast'
 
@@ -82,6 +81,7 @@ const Login = () => {
 
   }, [])
 
+
   useEffect(() => {
 
     if (!user) {
@@ -107,8 +107,9 @@ const Login = () => {
 
   return (
 
-    <div className='w-screen h-screen flex items-center justify-center text-white'>
+    <div className='w-screen h-screen flex items-center flex-col justify-center text-white'>
 
+      <span className='flex justify-start items-center text-[15px] my-5 cursor-pointer' onClick={() => { navigate('/') }}>{`< Home`}</span>
       <div className='border border-emerald-400 flex items-center justify-center flex-col rounded-2xl md:p-20 p-5 '>
 
         <h1 className='text-3xl font-bold my-4'>Login</h1>
