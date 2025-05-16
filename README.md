@@ -16,56 +16,96 @@ If you are developing a production application, we recommend using TypeScript wi
 first in your system have MongoDB, node.js, and VScode then open taskDo folder in your system
 
 ### step 1
+ create .env file in taskDo folder and Backend folder 
+
+>set variable in .env file of Backend folder 
+```
+    //Backend folder .env file
+    Mongo_URI = "mongodb://localhost:27017/"
+
+    React_URI = "http://localhost:5173" 
+
+    Host_URI = "http://localhost:3000/"
+
+    port = 3000
+```
+
+>set variable in .env file of TaskDo folder 
+```
+    //taskDo folder .env file 
+    VITE_Backend_URI: "http://localhost:3000"
+ ``` 
+
+
+### step 2
 open taskDo folder in your vscode then open terminal and run below command
->for install node moduels and run front-end and back-end open terminal of taskDo
+
+>for install node modules
 
 ```
 //run this command
 npm install 
 
-//run front-end
-npm run dev
+//make sure run below command in new terminal
+npm run npmi
 
-// create new terminal and run backend
-npm run backend
-```
-from this you get url of your front-end and back-end
-
-### step 2
- create .env file in taskDo folder and Backend folder 
-
->Backend .env file add 
-```
-    Mongo_URI = your mongodb uri   (ex: "mongodb://localhost:27017/" make sure url end with / )
-
-    React_URI = your front end url (ex: "http:localhost:5173")
-
-    Host_URI = your back end url (ex: "http://localhost:3000/" make sure url end with /)
-
-    port = port to run backend (ex:3000)
 ```
 
-
- >taskDo .env file add backend URL you can get backend uri by run backend
-```
-    // In taskDo .env file 
-    VITE_Backend_URI: your uri   (ex:"http://localhost:3000")
- ``` 
 
  ### step 3 
- now again run front-end and back-end 
- ```
- //if your last front-end and back-end is running then close both terminal
 
-//create two new terminal and run one command in different terminal 
-
-
+>for run front-end and back-end open terminal of taskDo folder open different terminal for different command
+```
 //run front-end
 npm run dev
 
-// run this command in new terminal for  run backend
+// run this command in new terminal for run backend
 npm run backend
 ```
 
-now you get url of front-end by ctrl+click you can run project
+now you get url of front-end by ctrl+click you can run project ( ***Notice*** : on first time login need to create admin if you click on login button you redirect to admin creation page for more detail read below content )
 
+
+## Admin Creation and Task Assignment
+
+## Overview
+ the user is required to create an **Admin** for the first time. After creating the admin account, they will be able to log in to the **Admin Dashboard**, assign tasks, and create new users for the platform.
+
+### Flow of the Component
+
+#### 1. **First-Time User Login**
+   - When a user logs in for the first time, they are prompted to create an **Admin Account**.
+   - The system will display a form with the following fields:
+     - **Email**
+     - **Password**
+   - The user must fill in these details and submit the form.
+   - Once the form is submitted, the system will create the Admin account and provide a success message.
+
+#### 2. **Login to Admin Dashboard**
+   - After the Admin account is created successfully, the user can log in to the **Admin Dashboard**.
+   - Upon successful login, the Admin will be directed to the Admin Dashboard, where they can perform administrative tasks like:
+     - **Assigning tasks**
+     - **Creating new users**
+   
+#### 3. **Creating New Users**
+   - The Admin can also create new users through the Admin Dashboard.
+   - The Admin can:
+     - Enter the new user's **Full Name**
+     - Set the new user's **Email** and **Password**
+
+#### 4. **Assigning Tasks**
+   - In the Admin Dashboard, the Admin can create and assign tasks to other users.
+   - The Admin will be able to:
+     - Select a user
+     - Provide a task description
+     - Set a due date
+     - Prioritize the task (optional)
+     - Submit the task assignment
+   
+
+### Key Features:
+- **Admin Account Creation**: Only one Admin account is created during the first-time login.
+- **Admin Dashboard**: A dedicated space for Admins to manage users and tasks.
+- **Task Assignment**: Admins can create and assign tasks to users.
+- **User Creation**: Admins can create new users and assign roles.
+---

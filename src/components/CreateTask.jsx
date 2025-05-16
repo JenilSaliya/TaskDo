@@ -247,7 +247,7 @@ const CreateTask = () => {
 
           <div>
 
-            <h3 className='text-sm text-gray-300 mb-0.5 mt-1'>Date</h3>
+            <h3 className='text-sm text-gray-300 mb-0.5 mt-1'>Due Date</h3>
             <input type="date" className='md:w-4/5 w-full text-sm py-1 rounded outline-none bg-transparent border-[1px] px-2 border-gray-400' {...register('dueDate')} />
 
           </div>

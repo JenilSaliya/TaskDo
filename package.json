@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "backend": "cd .\\Backend && npm start",
+    "npmi":"cd .\\Backend && npm install",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
