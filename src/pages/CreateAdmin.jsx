@@ -82,7 +82,7 @@ const CreateAdmin = () => {
 
     return (
 
-        <div className='w-screen h-screen flex items-center justify-center text-white'>
+        <div className='w-screen h-screen flex-col flex items-center justify-center text-white'>
 
             <span className='flex justify-start items-center text-[15px] my-5 cursor-pointer' onClick={() => { navigate('/') }}>{`< Home`}</span>
             <div className='border border-emerald-400 flex items-center justify-center flex-col rounded-2xl md:p-20 p-5 '>
